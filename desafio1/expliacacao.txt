@@ -1,11 +1,11 @@
-# 1) criar rede customizada
+1) criar rede customizada
 docker network create rede-desafio1
 
-# 2) build das imagens
+2) build das imagens
 docker build -t servidor-flask1 ./app
 docker build -t cliente1 ./cliente
 
-# 3) rodar containers
+3) rodar containers
 docker run -d --name servidor-desafio1 --network rede-desafio1 -p 8080:8080 servidor-flask1
 docker run -d --name cliente-desafio1 --network rede-desafio1 cliente1
 

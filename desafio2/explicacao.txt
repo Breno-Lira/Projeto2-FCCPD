@@ -1,0 +1,21 @@
+1) Criando volume Docker
+docker volume create desafio2-volume
+
+2) Build da imagem 
+docker build -t desafio2-app .
+
+3) Rodando conteiner com Volume 
+docker run --name desafio2-container -v desafio2-volume:/data desafio2-app
+
+4) Agora para testar a persistencia, remova o container
+docker rm desafio2-container
+
+5) Rodamos novemente com o mesmo volume 
+docker run --name desafio2-container -v desafio2-volume:/data desafio2-app
+
+OBS: Assim deve aparesser a antiga inserção feita e uma nova com os mesmos nomes
+
+Opcional) Conteiner para ler o banco (ele se auto apaga apos a realização)
+docker run --rm -v desafio2-volume:/data desafio2-app python reader.py
+
+
