@@ -1,0 +1,17 @@
+1) Comandos para rodar
+docker compose up --build
+
+
+2) Testes e exemplos (curl)
+
+Após docker compose up:
+
+Service A:
+curl http://localhost:5000/users
+
+
+Service B (consome A):
+
+curl http://localhost:5001/completo
+
+

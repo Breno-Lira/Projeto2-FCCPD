@@ -1,0 +1,14 @@
+1) Rodando tudo com:
+docker compose up -d
+
+2) Testar a comunicação
+Testar serviço web:
+http://localhost:8080
+
+Testar PostgreSQL:
+http://localhost:8080/db
+Deve retornar a data/hora do servidor PostgreSQL.
+
+Testar Redis:
+http://localhost:8080/cache
+Cada refresh incrementa o contador.

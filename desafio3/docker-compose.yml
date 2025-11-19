@@ -1,0 +1,44 @@
+services:
+
+  db:
+    image: postgres:15
+    container_name: db-desafio3
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: desafio3
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - rede-interna
+
+  cache:
+    image: redis:7
+    container_name: cache-desafio3
+    networks:
+      - rede-interna
+
+  web:
+    build: ./web
+    container_name: web-desafio3
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - cache
+    environment:
+      DB_HOST: db
+      DB_USER: admin
+      DB_PASS: admin123
+      DB_NAME: desafio3
+      CACHE_HOST: cache
+    networks:
+      - rede-interna
+
+volumes:
+  pgdata:
+
+networks:
+  rede-interna:
+    driver: bridge

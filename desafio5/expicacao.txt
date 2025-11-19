@@ -1,0 +1,9 @@
+1) Rodando 
+docker compose up -d
+
+
+Gateway listar usuários:
+http://localhost:8080/users
+
+Gateway listar pedidos:
+http://localhost:8080/orders

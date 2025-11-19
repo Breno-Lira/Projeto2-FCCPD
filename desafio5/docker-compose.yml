@@ -1,0 +1,32 @@
+services:
+
+  service-users:
+    build: ./service-users
+    container_name: service-users
+    ports:
+      - "5001:5001"
+    networks:
+      - internal-net
+
+  service-orders:
+    build: ./service-orders
+    container_name: service-orders
+    ports:
+      - "5002:5002"
+    networks:
+      - internal-net
+
+  gateway:
+    build: ./gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - service-users
+      - service-orders
+    networks:
+      - internal-net
+
+networks:
+  internal-net:
+    driver: bridge
