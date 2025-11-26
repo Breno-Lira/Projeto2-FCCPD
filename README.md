@@ -22,24 +22,28 @@ Abaixo vai a explicação do que está sendo feito em cada desafio e como roda-l
   ```bash
   cd desafio1
   ```
-  2. Fazer build das imagens:
+  2. Criando uma rede customizada:
+   ```bash
+  docker network create rede-desafio1
+  ```
+  4. Fazer build das imagens:
   ```bash
   docker build -t servidor-flask1 ./app
   docker build -t cliente1 ./cliente
   ```
-  3. Rodar os conteiners:
+  4. Rodar os conteiners:
   ```bash
     docker run -d --name servidor-desafio1 --network rede-desafio1 -p 8080:8080 servidor-flask1
     docker run -d --name cliente-desafio1 --network rede-desafio1 cliente1
   ```
-  4. E agora será possivel vivusalizar os logs gerados
+  5. E agora será possivel vivusalizar os logs gerados
   ```bash
     - Ver as requisições do cliente:
     docker logs -f cliente-desafio1
     -Ver as requisições chegando ao servidor Flask:
     docker logs -f servidor-desafio1
   ```
-  5. Para outra forma de vizualização (Recarregue a pagina Para ver a atualização do tempo):
+  6. Para outra forma de vizualização (Recarregue a pagina Para ver a atualização do tempo):
     "http://localhost:8080/" 
   
 </details>
