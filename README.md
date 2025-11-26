@@ -57,7 +57,7 @@ Abaixo vai a explicação do que está sendo feito em cada desafio e como roda-l
   <br>
   <ul>
     <li><strong>Volume:</strong> desafio2-volume</li>
-    <li><strong>Container:</strong> desafio2-container</li>
+    <li><strong>Container:</strong> desafio2-app</li>
   </ul>
 
   O volume é criado para armazenar dados persistentes. O container escreve dados no volume montado, e mesmo após remover o container, os dados permanecem no volume.
