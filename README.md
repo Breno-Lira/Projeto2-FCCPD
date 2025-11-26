@@ -38,8 +38,6 @@ Abaixo vai a explicação do que está sendo feito em cada desafio e como roda-l
   ```
   5. E agora será possivel vivusalizar os logs gerados
   ```bash
-    - Ver as requisições do cliente:
-    docker logs -f cliente-desafio1
     -Ver as requisições chegando ao servidor Flask:
     docker logs -f servidor-desafio1
   ```
