@@ -21,7 +21,7 @@ def completo():
         status = "ativo" if u.get("active") else "inativo"
         out.append({
             "id": u.get("id"),
-            "mensagem": f"Usuario {u.get('nome')} ({status}) - ativo desde {u.get('joined')}"
+            "mensagem": f"Usuario {u.get('nome')} ({status}) - ingresou em {u.get('joined')}"
         })
     return jsonify(out)
 
